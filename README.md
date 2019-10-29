@@ -1,6 +1,6 @@
 # Ohjelmistotekniikka, harjoitustyö
 ## Tehtävät
 ### Viikko 1
-[gitlog.txt] (https://github.com/sofmakin/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
-[GitHub](http://github.com)
+
+[gitlog.txt](https://github.com/sofmakin/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
 

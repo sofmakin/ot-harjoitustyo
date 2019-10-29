@@ -1,0 +1,61 @@
+
+commit ddce732d4b61f8c4deedffca7e9021263e16ddfc
+Author: Sofia <sofia.makinen@live.fi>
+Date:   Tue Oct 29 12:53:59 2019 +0200
+
+    poistot
+
+ stuff/tiedosto.txt | 9 +++++++++
+ tiedosto.txt       | 9 +++++++++
+ toinen.txt         | 1 -
+ 3 files changed, 18 insertions(+), 1 deletion(-)
+
+commit 3ed271b991af5821228df7e957fa6dfab0b29716
+Author: Sofia <sofia.makinen@live.fi>
+Date:   Tue Oct 29 12:39:57 2019 +0200
+
+    uudet
+
+ stuff/random.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 389635c27a0e49d350229dbc2050b4578c7e90b7
+Author: Sofia <sofia.makinen@live.fi>
+Date:   Tue Oct 29 12:38:56 2019 +0200
+
+    muutokset
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit bd03b66dcd8e18f93c6a87166cf6ccb410671977
+Author: Sofia <sofia.makinen@live.fi>
+Date:   Tue Oct 29 12:27:17 2019 +0200
+
+    lisäys
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 447313e0002d1bc0ea72796cce432c0038ba395d
+Author: Sofia <sofia.makinen@live.fi>
+Date:   Tue Oct 29 12:25:04 2019 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt      | 1 +
+ tiedosto.txt M -D | 1 +
+ toinen.txt        | 0
+ 3 files changed, 2 insertions(+)
+
+commit fc6f95c8b2d74e83c9b9d16dbd42f01ab463cb86
+Author: Sofia <sofia.makinen@live.fi>
+Date:   Tue Oct 29 12:14:48 2019 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+

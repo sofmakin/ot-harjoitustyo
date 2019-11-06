@@ -5,4 +5,4 @@
 * [gitlog.txt](https://github.com/sofmakin/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
 * [komentorivi.txt](https://github.com/sofmakin/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
 ### Viikko 2
-* [kattavuusraportti](https://github.com/sofmakin/ot-harjoitustyo/edit/master/laskarit/viikko2/kattavuusraportti.md)
+* [kattavuusraportti](https://github.com/sofmakin/ot-harjoitustyo/blob/master/laskarit/viikko2/kattavuusraportti.md)

@@ -7,8 +7,8 @@ Sovelluksessa on vain tavallinen käyttäjärooli.
 * pelaaja voi kontrolloida madon liikkeitä nuolinäppäimillä
 * joka kerta kun mato syö omenan se kasvaa pituutta
 ## Jatkokehitysideoita
-*jos mato osuu seinään peli päättyy
+* jos mato osuu seinään peli päättyy
 * pelaajien pistemäärät talletetaan ja pelaaja pääsee tarkastelemaan niitä
 * pisteet järjestetään suuruusjärjestykseen
-*käyttäjien kirjautuminen ja yksilöidyt pisteet 
+* käyttäjien kirjautuminen ja yksilöidyt pisteet 
 

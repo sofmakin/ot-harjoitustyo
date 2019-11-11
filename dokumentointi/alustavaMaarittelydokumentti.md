@@ -11,4 +11,5 @@ Sovelluksessa on vain tavallinen käyttäjärooli.
 * pelaajien pistemäärät talletetaan ja pelaaja pääsee tarkastelemaan niitä
 * pisteet järjestetään suuruusjärjestykseen
 * käyttäjien kirjautuminen ja yksilöidyt pisteet 
+* omenoiden satunnainen ilmestyminen kentälle
 

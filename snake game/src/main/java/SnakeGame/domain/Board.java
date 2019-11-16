@@ -14,8 +14,6 @@ public class Board {
    public static int width;
    public static int cornersize;
 
-    public Board() {
-    }
 
     public Board(int height, int width, int cornersize) {
         this.height = height;
@@ -28,7 +26,12 @@ public class Board {
     }
 
     public void setHeight(int height) {
-        this.height = 20;
+        this.height = height;
+    }
+
+    @Override
+    public String toString() {
+        return ""+this.height+" " + this.width +" " + this.cornersize;
     }
 
     public int getWidth() {
@@ -36,7 +39,7 @@ public class Board {
     }
 
     public void setWidth(int width) {
-        this.width = 20;
+        this.width = width;
     }
 
     public int getCornersize() {
@@ -44,7 +47,7 @@ public class Board {
     }
 
     public void setCornersize(int cornersize) {
-        this.cornersize = 25;
+        this.cornersize = cornersize;
     }
     
 }

@@ -30,6 +30,11 @@ public class Corner {
     public void setY(int y) {
         this.y = y;
     }
+
+    @Override
+    public String toString() {
+        return "Corner:" + "x=" + x + ", y=" + y;
+    }
     
     
 }

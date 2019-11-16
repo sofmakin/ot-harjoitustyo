@@ -6,7 +6,6 @@ import static SnakeGame.domain.Board.cornersize;
 import static SnakeGame.domain.Board.height;
 import static SnakeGame.domain.Board.width;
 import SnakeGame.domain.Food;
-import SnakeGame.domain.Snake;
 import SnakeGame.domain.Corner;
 import java.util.ArrayList;
 import java.util.List;
@@ -33,7 +32,7 @@ public class GameUi extends Application {
     
     static Dir direction = Dir.left;
     static boolean gameOver = false;
-    static double speed=3;
+    static double speed=2;
     static List<Corner>snake=new ArrayList<>();
     
     public enum Dir {
@@ -158,7 +157,7 @@ public class GameUi extends Application {
                     if (Food.getFoodX() == snake.get(0).x && Food.getFoodY()== snake.get(0).y) {
                   snake.add(new Corner(-1, -1));
                   Food food = new Food(Food.getRand().nextInt(width/2), Food.getRand().nextInt(height/2));
-                  speed++;
+                  
                        
                
       

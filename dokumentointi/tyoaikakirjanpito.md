@@ -6,3 +6,4 @@ päivä |aika|mitä tein
 11.11 | 3| javafx:n kertausta ja opettelua
 12.11 | 3 | sovelluksen perustoimintojen toteutusta
 13.11 | 3| käyttöliittymän toteutusta
+15.11|2|testien opettelua, ensimmäiset testit sovellukselle

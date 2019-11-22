@@ -1,2 +1,2 @@
 Sovelluksen alustava rakenne
-![rakenne](https://github.com/sofmakin/ot-harjoitustyo/issues/1#issuecomment-557710905)
+![image](https://user-images.githubusercontent.com/57106545/69463501-6768ff80-0d84-11ea-8126-b97cb68378a2.png)

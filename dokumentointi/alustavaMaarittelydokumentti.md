@@ -4,12 +4,12 @@ Sovellus on matopeli. Siinä pelaajan on tarkoitus saada mato syömään mahdoll
 ## Käyttäjät
 Sovelluksessa on vain tavallinen käyttäjärooli.
 ## Suunnitellut tominnallisuudet
-* pelaaja voi kontrolloida madon liikkeitä nuolinäppäimillä
-* joka kerta kun mato syö omenan se kasvaa pituutta
+* pelaaja voi kontrolloida madon liikkeitä nuolinäppäimillä //tehty
+* joka kerta kun mato syö omenan se kasvaa pituutta //tehty
 ## Jatkokehitysideoita
-* jos mato osuu seinään peli päättyy
+* jos mato osuu seinään peli päättyy // tehty
 * pelaajien pistemäärät talletetaan ja pelaaja pääsee tarkastelemaan niitä
 * pisteet järjestetään suuruusjärjestykseen
 * käyttäjien kirjautuminen ja yksilöidyt pisteet 
-* omenoiden satunnainen ilmestyminen kentälle
+* omenoiden satunnainen ilmestyminen kentälle // tehty
 

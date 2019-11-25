@@ -9,3 +9,6 @@ päivä |aika|mitä tein
 15.11 |2|testien opettelua, ensimmäiset testit sovellukselle
 21.11 |2| sovelluksen toimintojen kehitystä
 22.11|1| checkstylen käyttöönotto ja luokkakaavion teko
+23.11|3| pisteiden lisäys, käyttöliittymän muokkausta
+25.11|4| tiedostoon lisäyksen ja tiedoston lukemisen opettelua
+yhteensä | 22|

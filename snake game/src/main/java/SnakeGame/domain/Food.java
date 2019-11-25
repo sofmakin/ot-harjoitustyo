@@ -1,40 +1,29 @@
 
-package SnakeGame.domain;
+package snakegame.domain;
 
-import static SnakeGame.domain.Board.height;
-import static SnakeGame.domain.Board.width;
+import static snakegame.domain.Board.height;
+import static snakegame.domain.Board.width;
 import java.util.Random;
 import SnakeGame.ui.GameUi;
 import java.util.ArrayList;
 import java.util.List;
-/**
- *
- * @author admin
- */
+
 public class Food {
     
     static Random rand = new Random();
     static int foodX;
     static int foodY;
-    static int speed=1;
+    static int speed = 1;
 
   
     
     public Food(int foodX, int foodY) {
-        this.foodX = foodX;
-	this.foodY= foodY;
+            this.foodX = foodX;
+            this.foodY = foodY;
         
     }
-    public static void generateFood(){
-        while(true)
-            start:  for (Corner co : GameUi.getSnake()) {
-            if(co.x==foodX && co.y==foodY){
-                continue start;
-            }
-            break;
-        }
-   		}
-   
+
+
     public static Random getRand() {
         return rand;
     }
@@ -48,7 +37,7 @@ public class Food {
     }
 
     public static void setFoodX(int foodX) {
-       foodX = rand.nextInt(width);
+        foodX = rand.nextInt(width);
     }
 
     public static int getFoodY() {
@@ -57,6 +46,11 @@ public class Food {
 
     public static void setFoodY(int foodY) {
         foodY = rand.nextInt(height);
+    }
+
+    @Override
+    public String toString() {
+        return "Food: " + Food.getFoodX() + "," + Food.getFoodY();
     }
 
     

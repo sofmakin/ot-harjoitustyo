@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-import SnakeGame.domain.Board;
+import snakegame.domain.Board;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;

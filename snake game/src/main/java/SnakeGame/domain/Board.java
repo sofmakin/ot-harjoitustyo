@@ -1,18 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package SnakeGame.domain;
 
-/**
- *
- * @author admin
- */
+package snakegame.domain;
+
 public class Board {
-   public static int height;
-   public static int width;
-   public static int cornersize;
+    public static int height;
+    public static int width;
+    public static int cornersize;
 
 
     public Board(int height, int width, int cornersize) {
@@ -31,7 +23,7 @@ public class Board {
 
     @Override
     public String toString() {
-        return ""+this.height+" " + this.width +" " + this.cornersize;
+        return "" + this.height + " " + this.width + " " + this.cornersize;
     }
 
     public int getWidth() {

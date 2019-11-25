@@ -1,16 +1,12 @@
 
-package SnakeGame.domain;
+package snakegame.domain;
 
-/**
- *
- * @author admin
- */
-public class Corner {
+public class Point {
     
     public  int x;
-     public int y;
+    public int y;
 
-    public Corner(int x, int y) {
+    public Point(int x, int y) {
         this.x = x;
         this.y = y;
     }

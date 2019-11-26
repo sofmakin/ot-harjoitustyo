@@ -7,5 +7,4 @@
 
 <suppressions>
     <suppress files="snakegame.ui.GameUi.java" checks="[a-zA-Z0-9]*"/>
-    <suppress files="snakegame.ui.Main.java" checks="[a-zA-Z0-9]*"/>
-</suppressions> 
+</suppressions>

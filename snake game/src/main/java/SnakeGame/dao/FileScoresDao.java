@@ -50,7 +50,7 @@ public class FileScoresDao {
            
             } catch (Exception e) {
                 System.out.println("[Read] IO Error: " + e.getMessage());
-        }
+            }
         
         }
     }
@@ -74,7 +74,7 @@ public class FileScoresDao {
             }
         }
     }
-     public List<Scores> getScores() {
+    public List<Scores> getScores() {
         read();
         sort();
         return scores;

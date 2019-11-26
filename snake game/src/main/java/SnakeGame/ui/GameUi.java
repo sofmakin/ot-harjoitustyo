@@ -1,5 +1,5 @@
 
-package SnakeGame.ui;
+package snakegame.ui;
 
 import snakegame.domain.Board;
 import static snakegame.domain.Board.cornersize;
@@ -42,69 +42,69 @@ public class GameUi extends Application {
     
     static Dir direction = Dir.left;
     static boolean gameOver = false;
-    static double speed=1;
-    static List<Point>snake=new ArrayList<>();
+    static double speed = 1;
+    static List<Point> snake = new ArrayList<>();
     Scores score = new Scores(0);
-     static FileScoresDao fsd = new FileScoresDao();
+    static FileScoresDao fsd = new FileScoresDao();
     
     public enum Dir {
 	left, right, up, down
 	}
     
-    public void start (Stage stage){
+    public void start(Stage stage) {
         try {
            
       
-    Board board = new Board(20,20,25);
-    
-    Food food = new Food(Food.getRand().nextInt(width/2), Food.getRand().nextInt(height/2));
+            Board board = new Board(20, 20, 25);
 
-    VBox root = new VBox();
-    Scene scene = new Scene(root, width * cornersize, height * cornersize);
-    GridPane asset = new GridPane();
-    Button start = new Button("Start game");
-    Button exit = new Button("Exit");
-  
-   
-  
-      asset.add(start, 0, 2);
+            Food food = new Food(Food.getRand().nextInt(width / 2), Food.getRand().nextInt(height / 2));
+
+            VBox root = new VBox();
+            Scene scene = new Scene(root, width * cornersize, height * cornersize);
+            GridPane pane = new GridPane();
+            Button start = new Button("Start game");
+            Button exit = new Button("Exit");
+
+
+
+            pane.add(start, 0, 2);
+
+            pane.setPrefSize(300, 180);
+            pane.setAlignment(Pos.CENTER);
+            pane.setVgap(10);
+            pane.setHgap(10);
+            pane.setPadding(new Insets(20, 20, 20, 20));
       
-      asset.setPrefSize(300, 180);
-      asset.setAlignment(Pos.CENTER);
-      asset.setVgap(10);
-      asset.setHgap(10);
-      asset.setPadding(new Insets(20, 20, 20, 20));
-      
-       Scene opening = new Scene(asset);
-       start.setOnAction((event) -> stage.setScene(scene));
+            Scene opening = new Scene(pane);
+            start.setOnAction((event) -> stage.setScene(scene));
         
         
     
        
        
        
-    Canvas c = new Canvas(width * cornersize, height * cornersize);
-   
-    GraphicsContext gc = c.getGraphicsContext2D();
-    root.getChildren().add(c);
-        
-       
-        stage.setScene(opening);
-                stage.show();
+            Canvas c = new Canvas(width * cornersize, height * cornersize);
+
+            GraphicsContext gc = c.getGraphicsContext2D();
+            root.getChildren().add(c);
+
+
+            stage.setScene(opening);
+            stage.show();
                 
-         new AnimationTimer() {
-	long lastTick = 0;
+            new AnimationTimer() {
+                long lastTick = 0;
 
-	public void handle(long now) {
-	if (lastTick == 0) {
-	lastTick = now;
-	tick(gc);
-	return;
+                public void handle(long now) {
+                    if (lastTick == 0) {
+                        lastTick = now;
+                        tick(gc);
+                        return;
 					}
 
-	if (now - lastTick > 1000000000 / speed) {
-	lastTick = now;
-	tick(gc);
+                    if (now - lastTick > 1000000000 / speed) {
+                        lastTick = now;
+                        tick(gc);
 					}
 				}
 
@@ -113,26 +113,26 @@ public class GameUi extends Application {
 
 
          
-       scene.addEventFilter(KeyEvent.KEY_PRESSED, key -> {
-	if (key.getCode() == KeyCode.UP) {
-		direction = Dir.up;
-				}
-	if (key.getCode() == KeyCode.LEFT) {
-		direction = Dir.left;
-				}
-	if (key.getCode() == KeyCode.DOWN) {
-		direction = Dir.down;
-				}
-	if (key.getCode() == KeyCode.RIGHT) {
-		direction = Dir.right;
-				}
+            scene.addEventFilter(KeyEvent.KEY_PRESSED, key -> {
+                if (key.getCode() == KeyCode.UP) {
+                    direction = Dir.up;
+                }
+                if (key.getCode() == KeyCode.LEFT) {
+                    direction = Dir.left;
+                }
+                if (key.getCode() == KeyCode.DOWN) {
+                    direction = Dir.down;
+                }
+                if (key.getCode() == KeyCode.RIGHT) {
+                    direction = Dir.right;
+                }
 
 			});
        
         
-        snake.add(new Point(width / 4, height / 4));
-        snake.add(new Point(width / 4, height / 4));
-        stage.setTitle("SNAKE GAME");
+            snake.add(new Point(width / 4, height / 4));
+            snake.add(new Point(width / 4, height / 4));
+            stage.setTitle("SNAKE GAME");
         
         
 
@@ -140,7 +140,7 @@ public class GameUi extends Application {
         
         
         } catch (Exception e) {
-	e.printStackTrace();
+            e.printStackTrace();
         
 		}
 	}
@@ -150,17 +150,17 @@ public class GameUi extends Application {
     }
 
     
-        public static void tick(GraphicsContext gc) {
+    public static void tick(GraphicsContext gc) {
             
        
 		if (gameOver) {
-			gc.setFill(Color.RED);
-			gc.setFont(new Font("", 40));
-			gc.fillText("GAME OVER", 40, 45);
-                        gc.setFill(Color.WHITE);
-                        gc.setFont(new Font("", 30));
-                        gc.fillText("Score: " + String.valueOf(Scores.getScore()), 150, 150);
-                        fsd.addScore(Scores.getScore());
+            gc.setFill(Color.RED);
+            gc.setFont(new Font("", 40));
+            gc.fillText("GAME OVER", 40, 45);
+            gc.setFill(Color.WHITE);
+            gc.setFont(new Font("", 30));
+            gc.fillText("Score: " + String.valueOf(Scores.getScore()), 150, 150);
+            fsd.addScore(Scores.getScore());
                         
                         
                         
@@ -176,37 +176,37 @@ public class GameUi extends Application {
                
                         
 		switch (direction) {
-		case up:
-			snake.get(0).y--;
-			if (snake.get(0).y < 0) {
-				gameOver = true;
-			}
-			break;
-		case down:
-			snake.get(0).y++;
-			if (snake.get(0).y > height) {
-				gameOver = true;
-			}
-			break;
-		case left:
-			snake.get(0).x--;
-			if (snake.get(0).x < 0) {
-				gameOver = true;
-			}
-			break;
-		case right:
-			snake.get(0).x++;
-			if (snake.get(0).x > width) {
-				gameOver = true;
-			}
-			break;
+            case up:
+                snake.get(0).y--;
+                if (snake.get(0).y < 0) {
+                    gameOver = true;
+		}
+                break;
+            case down:
+                snake.get(0).y++;
+                if (snake.get(0).y > height) {
+                    gameOver = true;
                 }
+                break;
+            case left:
+                snake.get(0).x--;
+                if (snake.get(0).x < 0) {
+                    gameOver = true;
+                }
+                break;
+            case right:
+                snake.get(0).x++;
+                if (snake.get(0).x > width) {
+                    gameOver = true;
+                }
+                break;
+        }
                 
-                    if (Food.getFoodX() == snake.get(0).x && Food.getFoodY()== snake.get(0).y) {
-                            snake.add(new Point(-1, -1));
-                            Food food = new Food(Food.getRand().nextInt(width/2), Food.getRand().nextInt(height/2));
-                            Scores.increase();
-                            speed ++;
+        if (Food.getFoodX() == snake.get(0).x && Food.getFoodY() == snake.get(0).y) {
+            snake.add(new Point(-1, -1));
+            Food food = new Food(Food.getRand().nextInt(width / 2), Food.getRand().nextInt(height / 2));
+            Scores.increase();
+            speed++;
                         
                
       
@@ -215,17 +215,17 @@ public class GameUi extends Application {
         gc.setFill(Color.BLACK);
 	gc.fillRect(0, 0, width * cornersize, height * cornersize);
         gc.setFill(Color.DARKRED);
-        gc.fillOval(Food.getFoodX() * cornersize, Food.getFoodY()* cornersize, cornersize, cornersize);
+        gc.fillOval(Food.getFoodX() * cornersize, Food.getFoodY() * cornersize, cornersize, cornersize);
 
             
 
         
         for (Point co : snake) {            
-	gc.setFill(Color.LIGHTGREEN);
-	gc.fillRect(co.x * cornersize, co.y * cornersize, cornersize - 1, cornersize - 1);
-	gc.setFill(Color.GREEN);
-	gc.fillRect(co.x * cornersize, co.y * cornersize, cornersize - 2, cornersize - 2);
-    }
+            gc.setFill(Color.LIGHTGREEN);
+            gc.fillRect(co.x * cornersize, co.y * cornersize, cornersize - 1, cornersize - 1);
+            gc.setFill(Color.GREEN);
+            gc.fillRect(co.x * cornersize, co.y * cornersize, cornersize - 2, cornersize - 2);
+        }
         
     }
     

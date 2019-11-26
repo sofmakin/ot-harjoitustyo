@@ -4,7 +4,7 @@ package snakegame.domain;
 import static snakegame.domain.Board.height;
 import static snakegame.domain.Board.width;
 import java.util.Random;
-import SnakeGame.ui.GameUi;
+import snakegame.ui.GameUi;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,8 +18,8 @@ public class Food {
   
     
     public Food(int foodX, int foodY) {
-            this.foodX = foodX;
-            this.foodY = foodY;
+        this.foodX = foodX;
+        this.foodY = foodY;
         
     }
 

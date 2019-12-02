@@ -12,4 +12,8 @@ päivä |aika|mitä tein
 23.11|3| pisteiden lisäys, käyttöliittymän muokkausta
 25.11|4| tiedostoon lisäyksen ja tiedoston lukemisen opettelua, testejä
 26.11|2| checkstyle-virheiden korjausta, tiedostoon tallentemisen aloitus
-yhteensä | 24|
+28.11|2| testien lisäystä, sekvenssikaavion teko
+29.11|2| tiedostoon tallentamisen toteutusta
+30.11|2| käyttöliittymän muokkausta
+2.12 |5| tiedoston toteutusta, checkstylevirheiden korjausta, käyttöliittymän muokkausta
+yhteensä |35|

@@ -9,6 +9,6 @@ Sovelluksessa on vain tavallinen käyttäjärooli.
 ## Jatkokehitysideoita
 * jos mato osuu seinään peli päättyy // tehty
 * pelaajien pistemäärät talletetaan ja pelaaja pääsee tarkastelemaan niitä
-* pisteet järjestetään suuruusjärjestykseen
+* pisteet järjestetään suuruusjärjestykseen // tehty
 * omenoiden satunnainen ilmestyminen kentälle // tehty
 

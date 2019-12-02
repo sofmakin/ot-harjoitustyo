@@ -34,7 +34,11 @@ public class ScoresTest {
         Scores.increase();
         assertEquals("Scores: 2", score.toString());
     }
-  
+    @Test
+    public void setScoreWorks() {
+        score.setScore(20);
+        assertEquals("Scores: 20", score.toString());
+    }
 
 
 }

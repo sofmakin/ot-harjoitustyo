@@ -51,4 +51,19 @@ public class BoardTest {
         int answer = board.getCornersize();
         assertEquals(25, answer);
     }
+    @Test
+    public void setWidthisRight() {
+        board.setWidth(40);
+        assertEquals("20 40 25", board.toString());
+    }
+    @Test
+    public void setHeightisRight() {
+        board.setHeight(3);
+        assertEquals("3 20 25", board.toString());
+    }
+    @Test
+    public void setCornersizeIsRight() {
+        board.setCornersize(40);
+        assertEquals("20 20 40", board.toString());
+    }
 }

@@ -1,6 +1,8 @@
 
 package snakegame.ui;
 
+
+import java.io.IOException;
 import snakegame.domain.Board;
 import static snakegame.domain.Board.cornersize;
 import static snakegame.domain.Board.height;
@@ -8,19 +10,25 @@ import static snakegame.domain.Board.width;
 import snakegame.domain.Food;
 import snakegame.domain.Point;
 import snakegame.domain.Scores;
-import static java.awt.SystemColor.text;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
-import javafx.event.EventType;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.Menu;
+import javafx.scene.control.MenuBar;
+import javafx.scene.control.MenuItem;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
@@ -29,88 +37,115 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import snakegame.dao.FileScoresDao;
+import snakegame.dao.FileDao;
 
-
-/**
- *
- * @author admin
- */
 public class GameUi extends Application {
     
     static Dir direction = Dir.left;
     static boolean gameOver = false;
     static double speed = 1;
     static List<Point> snake = new ArrayList<>();
-    Scores score = new Scores(0);
-    static FileScoresDao fsd = new FileScoresDao();
+ 
+    String file = "scores.txt";
+    FileDao fd = new FileDao(file);
+    
+    Scores score;
     
     public enum Dir {
 	left, right, up, down
 	}
+   
     
+    @Override
     public void start(Stage stage) {
         try {
-           
-      
             Board board = new Board(20, 20, 25);
 
             Food food = new Food(Food.getRand().nextInt(width / 2), Food.getRand().nextInt(height / 2));
-
-            VBox root = new VBox();
+            Menu menu = new Menu("Menu");
+            MenuItem m1 = new MenuItem("to opening scene"); 
+            
+            menu.getItems().add(m1); 
+            MenuBar mb = new MenuBar();
+            mb.getMenus().add(menu);
+            VBox root = new VBox(mb);
             Scene scene = new Scene(root, width * cornersize, height * cornersize);
+            Canvas c = new Canvas(width * cornersize, height * cornersize);
+
+            GraphicsContext gc = c.getGraphicsContext2D();
+            root.getChildren().add(c);
+           
+          
             GridPane pane = new GridPane();
             Button start = new Button("Start game");
-            Button exit = new Button("Exit");
-
-
-
+            Button sc = new Button("scores");
+            VBox points = new VBox();
+            Button exit = new Button("exit");
+           
+           
             pane.add(start, 0, 2);
+            pane.add(sc, 0, 4);
 
             pane.setPrefSize(300, 180);
             pane.setAlignment(Pos.CENTER);
             pane.setVgap(10);
             pane.setHgap(10);
             pane.setPadding(new Insets(20, 20, 20, 20));
-      
+            Scene scoresScene = new Scene(points, width * cornersize, height * cornersize);
             Scene opening = new Scene(pane);
-            start.setOnAction((event) -> stage.setScene(scene));
         
-        
-    
-       
-       
-       
-            Canvas c = new Canvas(width * cornersize, height * cornersize);
-
-            GraphicsContext gc = c.getGraphicsContext2D();
-            root.getChildren().add(c);
-
-
-            stage.setScene(opening);
-            stage.show();
+            sc.setOnAction((event) -> {
+                stage.setScene(scoresScene);
+                Label label = new Label("Top 5 scores: " + "\n" + fd.getHighscoreString());
+                points.getChildren().add(label);
+                points.getChildren().addAll(exit);
+            });
+            m1.setOnAction((event) -> {
+                stage.setScene(opening);
+                try {  
+                    fd.addScore(this.score.getScore());
+                } catch (IOException ex) {
+                    Logger.getLogger(GameUi.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                fd.getScores();
+            });
+            
+            exit.setOnAction((event) -> stage.setScene(opening));
+            
+                 
+           
+            
                 
-            new AnimationTimer() {
+            AnimationTimer timer = new AnimationTimer() {
                 long lastTick = 0;
-
+              
                 public void handle(long now) {
                     if (lastTick == 0) {
-                        lastTick = now;
-                        tick(gc);
-                        return;
+                        try {
+                            lastTick = now;
+                            tick(gc);
+                            return;
+                        } catch (Exception ex) {
+                            Logger.getLogger(GameUi.class.getName()).log(Level.SEVERE, null, ex);
+                        }
 					}
 
                     if (now - lastTick > 1000000000 / speed) {
-                        lastTick = now;
-                        tick(gc);
+                        try {
+                            lastTick = now;
+                            tick(gc);
+                        } catch (Exception ex) {
+                            Logger.getLogger(GameUi.class.getName()).log(Level.SEVERE, null, ex);
+                        }
 					}
-				}
-
-			}.start();
-
-
+                
+                }
+			};
+                    
+                                       
+                    
+                    
 
          
             scene.addEventFilter(KeyEvent.KEY_PRESSED, key -> {
@@ -133,10 +168,15 @@ public class GameUi extends Application {
             snake.add(new Point(width / 4, height / 4));
             snake.add(new Point(width / 4, height / 4));
             stage.setTitle("SNAKE GAME");
-        
-        
-
-       
+           
+            start.setOnAction((event) -> {
+                stage.setScene(scene);
+                this.score = neww();
+            });
+            timer.start();
+            stage.setScene(opening);
+            stage.show();
+            
         
         
         } catch (Exception e) {
@@ -145,12 +185,17 @@ public class GameUi extends Application {
 		}
 	}
 
-    public static List<Point> getSnake() {
-        return snake;
-    }
+ 
+    public Scores neww() {
+        return new Scores(0);
+        
+    }   
 
-    
-    public static void tick(GraphicsContext gc) {
+      
+
+          
+
+    public void tick(GraphicsContext gc) throws Exception  {
             
        
 		if (gameOver) {
@@ -160,12 +205,12 @@ public class GameUi extends Application {
             gc.setFill(Color.WHITE);
             gc.setFont(new Font("", 30));
             gc.fillText("Score: " + String.valueOf(Scores.getScore()), 150, 150);
-            fsd.addScore(Scores.getScore());
-                        
-                        
-                        
-                                               
-			return;
+  
+            
+         
+                       
+            
+            return;
 		}
 
 		for (int i = snake.size() - 1; i >= 1; i--) {
@@ -204,8 +249,8 @@ public class GameUi extends Application {
                 
         if (Food.getFoodX() == snake.get(0).x && Food.getFoodY() == snake.get(0).y) {
             snake.add(new Point(-1, -1));
-            Food food = new Food(Food.getRand().nextInt(width / 2), Food.getRand().nextInt(height / 2));
-            Scores.increase();
+            Food food = new Food(Food.getRand().nextInt(width / 2), Food.getRand().nextInt(height / 2));         
+            score.increase();
             speed++;
                         
                
@@ -226,9 +271,9 @@ public class GameUi extends Application {
             gc.setFill(Color.GREEN);
             gc.fillRect(co.x * cornersize, co.y * cornersize, cornersize - 2, cornersize - 2);
         }
-        
+       
     }
-    
+  
     public static void main(String[] args) {
         launch(args);
     }

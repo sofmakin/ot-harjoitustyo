@@ -4,7 +4,7 @@ package snakegame.domain;
 import java.io.Serializable;
 
 
-public class Scores implements Serializable, Comparable<Scores> {
+public class Scores  {
     
     public static int score;
     
@@ -29,12 +29,12 @@ public class Scores implements Serializable, Comparable<Scores> {
     public String toString() {
         return "Scores: " + score;
     }
-
-    @Override
-    public int compareTo(Scores scores1) {
-        return ((Integer)(scores1.getScore())).compareTo(getScore());
-    }
-
     
     
 }
+
+   
+    
+    
+    
+

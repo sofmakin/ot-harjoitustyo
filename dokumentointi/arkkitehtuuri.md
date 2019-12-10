@@ -14,9 +14,13 @@ Käyttöliittymässä on kolme näkymää
 * Pelinäkymä
 * Pistenäkymä
 
-Käyttöliittymä on toteutettu luokassa snakegame.ui.GameUi
+Käyttöliittymä on toteutettu luokassa snakegame.ui.GameUi.
+## Sovelluslogiikka
+Sovellukslogiikan luokat ovat  Point, Board, Food ja Scores. Peli luodaan näiden luokkien avulla käyttöliittymässä.
+## Tiedon tallentaminen
+Tiedon tallentaminen tapahtuu pakkauksen snakegame.dao luokassa FileDao, jossa pisteet lisätään tiedostoon ja luetaan tiedostosta.
 
-## Päätoiminallisuudet
+## Päätoiminnallisuudet
 
 Sekvenssikaavio, pisteiden haku
 

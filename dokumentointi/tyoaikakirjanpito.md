@@ -16,4 +16,5 @@ päivä |aika|mitä tein
 29.11|2| tiedostoon tallentamisen toteutusta
 30.11|2| käyttöliittymän muokkausta
 2.12 |5| tiedoston toteutusta, checkstylevirheiden korjausta, käyttöliittymän muokkausta
-yhteensä |35|
+6.12|3| javaDocin käyttöönotto, testien lisäystä
+yhteensä |38|

@@ -17,4 +17,6 @@ päivä |aika|mitä tein
 30.11|2| käyttöliittymän muokkausta
 2.12 |5| tiedoston toteutusta, checkstylevirheiden korjausta, käyttöliittymän muokkausta
 6.12|3| javaDocin käyttöönotto, testien lisäystä
-yhteensä |38|
+7.12|1| arkkitehtuurikuvauksen tekoa
+10.12|2| käyttöliittymän muokkausta
+yhteensä |41|

@@ -8,7 +8,7 @@ Sovelluksessa on vain tavallinen käyttäjärooli.
 * joka kerta kun mato syö omenan se kasvaa pituutta //tehty
 ## Jatkokehitysideoita
 * jos mato osuu seinään peli päättyy // tehty
-* pelaajien pistemäärät talletetaan ja pelaaja pääsee tarkastelemaan niitä
+* pelaajien pistemäärät talletetaan ja pelaaja pääsee tarkastelemaan niitä //tehty
 * pisteet järjestetään suuruusjärjestykseen /// tehty
 * omenoiden satunnainen ilmestyminen kentälle // tehty
 

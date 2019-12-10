@@ -12,12 +12,21 @@ import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * 
+ * Pisteiden tallenuksesta vastaava luokka.
+ */
 public class FileDao {
-  
+    /**
+     * Lista pisteille
+     */
     public List<Integer> scores;
     private String file;
 
-
+    /**
+     * Metodi lukee tiedostoa.
+     * @param file luokassa määritelty muuttuja
+     */
     public FileDao(String file) {
         this.scores = new ArrayList<>();
         this.file = file;
@@ -46,7 +55,11 @@ public class FileDao {
        
                 
     }
-        
+    /**
+     * Metodi tallentaa pisteet tiedostoon.
+     * 
+     * @throws IOException ilmoittaa mahdollisesta virheestä
+     */
     public void save() throws IOException  {
         try (FileWriter writer = new FileWriter(new File(file))) {
             for (Integer sc : scores) {
@@ -59,28 +72,43 @@ public class FileDao {
         }
         
     } 
+    /**
+     * Metodi lisää pisteen Scores-listaan jonka jälkeen tieto talletetaan tiedostoon.
+     * 
+     * @param score käyttäjän antama pistemäärä
+     * 
+     * @throws IOException ilmoittaa mahdollisesta virheestä
+     */
     public void addScore(int score) throws IOException  {
         this.scores.add(score);                      
         save();
         System.out.println("saved");    
         
     }
-
+    /**
+     * Metodi lajittelee ensin pisteet ja tulostaa listan.
+     * 
+     * @return palauttaa lajitellun listan
+     */
     public List<Integer> getScores() {
-        System.out.println("get score");
         sort();
        
         return scores;
     }
-    
+    /**
+     * Metodi toteuttaa pisteiden lajittelun suuruusjärjestykseen
+     */
     private void sort() {
-        System.out.println("sort");
         Collections.sort(scores);
         Collections.reverse(scores);
         System.out.println(this.scores);
        
     }
-    
+    /**
+     * Metodi tulostaa listalta viisi korkeinta pistemäärää.
+     * 
+     * @return palauttaa listan jossa viisi korkeinta pistemäärää 
+     */
     public String getHighscoreString() {
         System.out.println("getHighScoreString");
         String highscoreString = "";
@@ -100,7 +128,10 @@ public class FileDao {
         return highscoreString;
     }
     
-
+    
+    public List<Integer> getAllScores() {
+        return scores;
+    }
     
 }
     

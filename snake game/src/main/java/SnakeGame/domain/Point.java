@@ -1,11 +1,22 @@
 
 package snakegame.domain;
 
+/**
+ * 
+ * Pelialustan pisteitä ilmentävä luokka.
+ */
 public class Point {
     
     public  int x;
     public int y;
 
+    /**
+     *Konstruktori luo uuden pisteen.
+     * 
+     * @param x käyttäjän antama x-koordinaatti
+     * 
+     * @param y käyttäjän antama y-koordinaatti
+     */
     public Point(int x, int y) {
         this.x = x;
         this.y = y;

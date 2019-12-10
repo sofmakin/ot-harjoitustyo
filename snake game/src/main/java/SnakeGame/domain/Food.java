@@ -8,6 +8,11 @@ import snakegame.ui.GameUi;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 
+ * Peliin ruoka-elementin tarjoava luokka.
+ */
+
 public class Food {
     
     static Random rand = new Random();
@@ -16,7 +21,13 @@ public class Food {
     static int speed = 1;
 
   
-    
+    /**
+     * Konstruktori luo ruoka-pisteen satunnaiseen kohtaan kenttää.
+     * 
+     * @param foodX Satunnainen x-koordinaatti pelikentältä.
+     * 
+     * @param foodY Satunnainen y-koordinaatti pelikentältä.
+     */
     public Food(int foodX, int foodY) {
         this.foodX = foodX;
         this.foodY = foodY;

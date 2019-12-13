@@ -1,14 +1,15 @@
 # Vaatimusmäärittely
 ## Sovelluksen tarkoitus
-Sovellus on matopeli. Siinä pelaajan on tarkoitus saada mato syömään mahdollisimman paljon omenoita, jolloin mato kasvaa.
+Sovellus on matopeli. Siinä pelaajan on tarkoitus saada mato syömään mahdollisimman paljon omenoita, jolloin mato ja pistemäärä kasvavat.
 ## Käyttäjät
 Sovelluksessa on vain tavallinen käyttäjärooli.
-## Suunnitellut tominnallisuudet
-* pelaaja voi kontrolloida madon liikkeitä nuolinäppäimillä //tehty
-* joka kerta kun mato syö omenan se kasvaa pituutta //tehty
+## Sovelluksen tarjoamat toiminnallisuudet
+* pelaaja voi kontrolloida madon liikkeitä nuolinäppäimillä
+* omenat ilmestyvät kentälle satunnaisesti
+* joka kerta kun mato syö omenan se kasvaa pituutta ja sen nopeus kasvaa
+* peli päättyy jos mato osuu seinään
+* pelaajan pistemäärä talletetaan tiedostoon ja ilmoitetaan pelin päätyttyä pelaajalle
+* korkeimpia pistemääriä pääse tarkastelemaan erillisessä pistenäkymässä
 ## Jatkokehitysideoita
-* jos mato osuu seinään peli päättyy // tehty
-* pelaajien pistemäärät talletetaan ja pelaaja pääsee tarkastelemaan niitä //tehty
-* pisteet järjestetään suuruusjärjestykseen /// tehty
-* omenoiden satunnainen ilmestyminen kentälle // tehty
-
+* eri vaikeustasoja
+* käyttäjien mahdollinen kirjautuminen ja yksilöinti

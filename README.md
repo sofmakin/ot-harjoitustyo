@@ -6,6 +6,7 @@ Sovellus on matopeli, jossa pelaajan on tarkoitus kasvattaa matoa. Matoa liikute
 * [arkkitehtuuri](https://github.com/sofmakin/ot-harjoitustyo/blob/master/dokumentointi/arkkitehtuuri.md)
 * [vaatimusmäärittely](https://github.com/sofmakin/ot-harjoitustyo/blob/master/dokumentointi/alustavaMaarittelydokumentti.md)
 * [käyttöohje](https://github.com/sofmakin/ot-harjoitustyo/blob/master/dokumentointi/kayttoohje.md)
+* [testausdokumentti](https://github.com/sofmakin/ot-harjoitustyo/blob/master/dokumentointi/testaus.md)
 ## Releaset
 [release viikko 6](https://github.com/sofmakin/ot-harjoitustyo/releases/tag/viikko6)
 ## Komentoivitoiminnot

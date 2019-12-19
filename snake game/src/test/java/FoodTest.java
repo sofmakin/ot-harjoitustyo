@@ -1,4 +1,5 @@
 
+import java.util.Random;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -29,5 +30,6 @@ public class FoodTest {
         food = new Food(2,3);
            assertEquals("Food: 2,3", food.toString());   
     }
+   
 }
 

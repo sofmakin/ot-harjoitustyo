@@ -2,6 +2,7 @@
 package snakegame.ui;
 
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import snakegame.domain.Board;
 import static snakegame.domain.Board.cornersize;
@@ -12,15 +13,13 @@ import snakegame.domain.Point;
 import snakegame.domain.Scores;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
@@ -44,8 +43,6 @@ public class GameUi extends Application {
     static boolean gameOver = false;
     static double speed = 1;
     static List<Point> snake = new ArrayList<>();
-    String file = "scores.txt";
-    FileDao fd = new FileDao(file);
     Scores score;
     private Scene scene;
     private VBox root;
@@ -54,9 +51,15 @@ public class GameUi extends Application {
 	left, right, up, down
 	}
 
+    
+    
     @Override
-    public void start(Stage stage) {
-//        try {
+    public void start(Stage stage) throws Exception {
+        Properties properties = new Properties();
+        properties.load(new FileInputStream("config.properties"));
+        String file = properties.getProperty("scoreFile");
+        FileDao fd = new FileDao(file);
+        
         Board board = new Board(20, 20, 25);
         Food food = new Food(Food.getRand().nextInt(width / 2), Food.getRand().nextInt(height / 2));
         Menu menu = new Menu("Menu");
@@ -75,7 +78,6 @@ public class GameUi extends Application {
         VBox points = new VBox();
         Button exit = new Button("exit");
         pane.add(start, 0, 2);
-        pane.add(sc, 0, 4);
         pane.setPrefSize(300, 180);
         pane.setAlignment(Pos.CENTER);
         pane.setVgap(10);
@@ -83,6 +85,13 @@ public class GameUi extends Application {
         pane.setPadding(new Insets(20, 20, 20, 20));
         Scene scoresScene = new Scene(points, width * cornersize, height * cornersize);
         Scene opening = new Scene(pane);
+        GridPane pane2 = new GridPane();
+        pane2.add(sc, 0, 4);
+        pane2.setPrefSize(300, 180);
+        pane2.setAlignment(Pos.CENTER);
+        pane2.setVgap(10);
+        pane2.setHgap(10);
+        Scene middle = new Scene(pane2);
       
         
         sc.setOnAction((event) -> {
@@ -93,8 +102,7 @@ public class GameUi extends Application {
             points.getChildren().addAll(exit);
         });
         m1.setOnAction((event) -> {
-            stage.setScene(opening);
-//              root.getChildren().clear();
+            stage.setScene(middle);
             try {  
                 fd.addScore(this.score.getScore());
             } catch (IOException ex) {
@@ -105,6 +113,9 @@ public class GameUi extends Application {
             
         exit.setOnAction((event) -> stage.close());
             
+        
+        
+    
         AnimationTimer timer = new AnimationTimer() {
                 long lastTick = 0;
               
@@ -130,7 +141,7 @@ public class GameUi extends Application {
                 
                 }
 			};
-                    
+     
 
         scene.addEventFilter(KeyEvent.KEY_PRESSED, key -> {
             if (key.getCode() == KeyCode.UP) {
@@ -156,15 +167,13 @@ public class GameUi extends Application {
         start.setOnAction((event) -> {
             stage.setScene(scene);
             this.score = neww();
+            timer.start();
+           
         });
-        timer.start();
+
         stage.setScene(opening);
         stage.show();
         
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        
-		
 	}
 
  

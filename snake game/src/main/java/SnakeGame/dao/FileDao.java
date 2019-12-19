@@ -49,11 +49,8 @@ public class FileDao {
            
             }
         }
-        System.out.println("file " + this.scores);
       
-        
-       
-                
+      
     }
     /**
      * Metodi tallentaa pisteet tiedostoon.
@@ -63,8 +60,7 @@ public class FileDao {
     public void save() throws IOException  {
         try (FileWriter writer = new FileWriter(new File(file))) {
             for (Integer sc : scores) {
-                    
-                System.out.println(sc);
+
                 writer.write(sc + "\n");
                   
             }
@@ -81,9 +77,7 @@ public class FileDao {
      */
     public void addScore(int score) throws IOException  {
         this.scores.add(score);                      
-        save();
-        System.out.println("saved");    
-        
+        save();  
     }
     /**
      * Metodi lajittelee ensin pisteet ja tulostaa listan.
@@ -101,7 +95,6 @@ public class FileDao {
     private void sort() {
         Collections.sort(scores);
         Collections.reverse(scores);
-        System.out.println(this.scores);
        
     }
     /**
@@ -110,7 +103,6 @@ public class FileDao {
      * @return palauttaa listan jossa viisi korkeinta pistemäärää 
      */
     public String getHighscoreString() {
-        System.out.println("getHighScoreString");
         String highscoreString = "";
         int max = 5;
 
@@ -128,7 +120,10 @@ public class FileDao {
         return highscoreString;
     }
     
-    
+    /**
+     * Metodi palauttaa kaikki listan pisteet
+     * @return palauttaa listan
+     */
     public List<Integer> getAllScores() {
         return scores;
     }

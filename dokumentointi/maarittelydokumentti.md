@@ -13,3 +13,5 @@ Sovelluksessa on vain tavallinen käyttäjärooli.
 ## Jatkokehitysideoita
 * eri vaikeustasoja
 * käyttäjien mahdollinen kirjautuminen ja yksilöinti
+* erivärisiä hedelmiä joista seuraa erilaisia pelinkulkuun vaikuttavia ominaisuuksia kuten vauhdin hidastuminen 
+  tai pistemäärän nopeampi kasvu

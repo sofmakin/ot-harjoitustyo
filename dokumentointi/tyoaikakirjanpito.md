@@ -19,4 +19,7 @@ päivä |aika|mitä tein
 6.12|3| javaDocin käyttöönotto, testien lisäystä
 7.12|1| arkkitehtuurikuvauksen tekoa
 10.12|2| käyttöliittymän muokkausta
-yhteensä |41|
+14.12|2| testien lisäystä, sovelluksen muokkausta
+15.12 |3|sovelluksen dokumentointia
+19.12 |2| sovelluksen dokumentointia
+yhteensä |48|

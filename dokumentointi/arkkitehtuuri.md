@@ -24,6 +24,7 @@ Luokkien suhdetta toisiinsa ja käyttöliittymään kuvaava kaavio:
 ## Tiedon tallentaminen
 Tiedon tallentaminen tapahtuu pakkauksen snakegame.dao luokassa FileDao, jossa pisteet lisätään tiedostoon ja luetaan tiedostosta.
 Luokassa FileDao pisteet myös järjestetään suurusjärjestykseen ja lisätään listalle joka pistenäkymässä palautetaan käyttäjän tarkasteltavaksi.
+
 Sovellukseen on sijoitettu konfiguraatiotiedosto config.properties, jossa pistetiedoston nimi on määritelty. 
 Pisteet talletetaan tiedostoon allekkain kukin piste omalle rivilleen:
 
@@ -36,9 +37,12 @@ Pisteet talletetaan tiedostoon allekkain kukin piste omalle rivilleen:
 
 ## Päätoiminnallisuudet
 
-Sekvenssikaavio, pisteiden haku
+Sekvenssikaavio pisteiden hausta, kun käyttäjä painaa scores-nappia:
 
 ![image](https://www.websequencediagrams.com/cgi-bin/cdraw?lz=CgoKVXNlci0-K0dhbWVVaTpjbGljayBzY29yZXMKAA4GLT4rRmlsZVMADwVEYW86Z2V0SGlnaAAMBVN0cmluZygpCgAWDS0-LQBJB2hpZ2gASQUAIwYASgkAaAdzdGFnZS5zZXQoAG0GU2NlbmUpAHEILT5Vc2VyOgo&s=napkin)
+
+Pelinäkymästä poistuminen: 
+
 
 ## Sovelluksen rakenteen ongelmat
 

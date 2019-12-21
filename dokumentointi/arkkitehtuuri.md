@@ -39,3 +39,12 @@ Pisteet talletetaan tiedostoon allekkain kukin piste omalle rivilleen:
 Sekvenssikaavio, pisteiden haku
 
 ![image](https://www.websequencediagrams.com/cgi-bin/cdraw?lz=CgoKVXNlci0-K0dhbWVVaTpjbGljayBzY29yZXMKAA4GLT4rRmlsZVMADwVEYW86Z2V0SGlnaAAMBVN0cmluZygpCgAWDS0-LQBJB2hpZ2gASQUAIwYASgkAaAdzdGFnZS5zZXQoAG0GU2NlbmUpAHEILT5Vc2VyOgo&s=napkin)
+
+## Sovelluksen rakenteen ongelmat
+
+### Käyttöliittymä
+
+Sovelluksen käyttöliittymä on rakennettu kokonaan luokan GameUi metodissa start. Koodia olisi ollut syytä jakaa useampaan metodiin, esimerkiksi aloitus-, peli- ja pistenäkymälle erikseen omat metodit joita kutsutaan. 
+
+Myös madon liikkumisen ja pelin päättymisen voisi siirtää uuteen luokkaan sovellulogiikan puolelle, mikä selkeyttäisi käyttöliittymän koodia. 
+

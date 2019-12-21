@@ -43,6 +43,9 @@ Sekvenssikaavio pisteiden hausta, kun käyttäjä painaa scores-nappia:
 
 Pelinäkymästä poistuminen: 
 
+![image](https://user-images.githubusercontent.com/57106545/71312504-60411a00-2434-11ea-8bbf-3858a681b354.png)
+
+
 
 ## Sovelluksen rakenteen ongelmat
 
